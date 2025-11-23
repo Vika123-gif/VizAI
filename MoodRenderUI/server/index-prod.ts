@@ -5,18 +5,20 @@ import { type Server } from "node:http";
 import express, { type Express } from "express";
 import runApp from "./app";
 
+// __dirname работает только в CommonJS, поэтому в TS нужно сделать хак:
+const __dirname_local = path.dirname(__filename);
+
 export async function serveStatic(app: Express, _server: Server) {
-  const distPath = path.resolve(import.meta.dirname, "public");
+  // путь к фронтенду после сборки на Vercel/локально
+  const distPath = path.resolve(__dirname_local, "../client-dist");
 
   if (!fs.existsSync(distPath)) {
-    throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`,
-    );
+    console.warn(`⚠️ Static folder not found: ${distPath}`);
+    return; // сервер всё равно должен работать
   }
 
   app.use(express.static(distPath));
 
-  // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
     res.sendFile(path.resolve(distPath, "index.html"));
   });
