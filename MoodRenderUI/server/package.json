@@ -1,0 +1,16 @@
+{
+  "name": "vizai-server",
+  "version": "1.0.0",
+  "main": "index-prod.ts",
+  "scripts": {
+    "dev": "ts-node index-dev.ts",
+    "start": "ts-node index-prod.ts"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}
