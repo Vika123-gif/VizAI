@@ -2,24 +2,19 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
-    "outDir": "dist",
-    "rootDir": ".",
+    "outDir": "../dist",
+    "rootDir": "..",
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
   "include": [
-    "index-prod.ts",
-    "app.ts",
-    "routes.ts",
-    "storage.ts",
-    "lib/**/*.ts"
+    "server/**/*.ts",
+    "shared/**/*.ts"
   ],
   "exclude": [
-    "index-dev.ts",
-    "../vite.config.ts",
-    "../client",
-    "../shared"
+    "client",
+    "node_modules"
   ]
 }
