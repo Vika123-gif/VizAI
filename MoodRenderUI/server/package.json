@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index-prod.ts",
   "scripts": {
-    "dev": "ts-node index-dev.ts",
-    "start": "ts-node index-prod.ts"
+    "dev": "TS_NODE_TRANSPILE_ONLY=true ts-node index-dev.ts",
+    "start": "TS_NODE_TRANSPILE_ONLY=true ts-node index-prod.ts"
   },
   "dependencies": {
     "express": "^4.19.0",
