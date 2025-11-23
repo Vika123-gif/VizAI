@@ -10,11 +10,11 @@
     "resolveJsonModule": true
   },
   "include": [
-    "server/**/*.ts",
-    "shared/**/*.ts"
+    "../server/**/*.ts",
+    "../shared/**/*.ts"
   ],
   "exclude": [
-    "client",
-    "node_modules"
+    "../client",
+    "../node_modules"
   ]
 }
