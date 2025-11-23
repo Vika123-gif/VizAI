@@ -9,6 +9,17 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "include": ["./**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "index-prod.ts",
+    "app.ts",
+    "routes.ts",
+    "storage.ts",
+    "lib/**/*.ts"
+  ],
+  "exclude": [
+    "index-dev.ts",
+    "../vite.config.ts",
+    "../client",
+    "../shared"
+  ]
 }
