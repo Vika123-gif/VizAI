@@ -1,16 +1,21 @@
 {
   "name": "vizai-server",
   "version": "1.0.0",
-  "main": "index-prod.ts",
+  "main": "dist/index-prod.js",
   "scripts": {
-    "dev": "TS_NODE_TRANSPILE_ONLY=true ts-node index-dev.ts",
-    "start": "TS_NODE_TRANSPILE_ONLY=true ts-node index-prod.ts"
+    "build": "tsc -p ./tsconfig.json",
+    "start": "node dist/index-prod.js",
+    "dev": "ts-node --transpile-only index-dev.ts"
   },
   "dependencies": {
     "express": "^4.19.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0"
   }
 }
